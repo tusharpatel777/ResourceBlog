@@ -67,7 +67,7 @@ const UpdateForm = ({ blog, onCancel, refreshBlogs }) => {
     e.preventDefault();
 
     try {
-      const res = await axios.put(`http://localhost:5000/api/blogs/${blog._id}`, {
+      const res = await axios.put(`https://resourceblog-1.onrender.com/api/blogs/${blog._id}`, {
         title,
         description
       });

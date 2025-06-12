@@ -17,14 +17,13 @@ const App = () => {
   // Function to get blogs
   const getBlogs = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/blogs");
+      const response = await axios.get("https://resourceblog-1.onrender.com/api/blogs");
       setBlogs(response.data);
       console.log("Blogs fetched:", response.data);
     } catch (error) {
       console.error("Error fetching the blogs:", error); // Use console.error for errors
     }
   };
-
 
 
   // Use useEffect to load blogs when the component mounts
@@ -37,7 +36,7 @@ const App = () => {
   const createBlog = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5000/api/blogs", { title, description });
+      const response = await axios.post("https://resourceblog-1.onrender.com/api/blogs", { title, description });
       console.log("Blog created:", response.data);
       toast.success("Blog created successfully!");
       // Clear the form fields
@@ -54,7 +53,7 @@ const App = () => {
 
   const deleteBlog=async(id)=>{
     try {
-     let response=await axios.delete(`http://localhost:5000/api/blogs/${id}`);
+     let response=await axios.delete(`https://resourceblog-1.onrender.com/api/blogs/${id}`);
      console.log(response.data);
       toast.success("Blog deleted successfully!");
      getBlogs();
